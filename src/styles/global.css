@@ -861,6 +861,62 @@ main {
 }
 
 /* ==========================================================
+   HOME — Press
+   ========================================================== */
+.press {
+  padding-top: 64px;
+}
+.press__list {
+  margin-top: 16px;
+  border-top: 1px solid var(--forest);
+}
+.press__item {
+  display: grid;
+  gap: 10px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+}
+.press__meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.press__title {
+  font-size: clamp(19px, 4.6vw, 26px);
+  font-weight: 800;
+  line-height: 1.4;
+  letter-spacing: -0.03em;
+  color: var(--forest);
+}
+.press__more {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--terracotta);
+}
+.press__item:hover .press__title {
+  color: var(--terracotta);
+}
+@media (min-width: 900px) {
+  .press {
+    padding-top: 96px;
+  }
+  .press__item {
+    grid-template-columns: 260px 1fr auto;
+    align-items: center;
+    gap: 28px;
+    padding: 28px 0;
+  }
+}
+
+.letter-section__link {
+  justify-self: start;
+  margin-top: 8px;
+}
+
+/* ==========================================================
    HOME — Back issues
    ========================================================== */
 .issues {

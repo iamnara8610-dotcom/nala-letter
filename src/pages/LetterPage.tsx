@@ -77,6 +77,11 @@ function LetterView({ letter }: { letter: IssuedLetter }) {
                 {s.body.map((p, j) => (
                   <p key={j}>{p}</p>
                 ))}
+                {s.link ? (
+                  <a className="btn btn--ghost btn--sm letter-section__link" href={s.link.url} target="_blank" rel="noopener noreferrer">
+                    {s.link.label} <span aria-hidden="true">↗</span>
+                  </a>
+                ) : null}
               </div>
             </div>
 

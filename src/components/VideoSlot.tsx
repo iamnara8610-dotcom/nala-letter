@@ -1,9 +1,12 @@
+import { useState } from 'react';
 import type { LetterVideo } from '../content/types';
 import { parseVideo } from '../lib/video';
 import { externalProps } from '../lib/links';
 
 export function VideoSlot({ video }: { video: LetterVideo }) {
   const v = parseVideo(video.url);
+  // mp4 파일은 영상 비율(세로/가로)을 자동으로 감지합니다
+  const [vertical, setVertical] = useState(false);
 
   return (
     <figure className="video-slot">
@@ -18,8 +21,15 @@ export function VideoSlot({ video }: { video: LetterVideo }) {
           />
         </div>
       ) : v.kind === 'file' ? (
-        <div className="video-slot__frame">
-          <video src={v.src} controls playsInline preload="metadata" />
+        <div className={`video-slot__frame ${vertical ? 'is-vertical' : ''}`}>
+          <video
+            src={v.src}
+            poster={video.poster}
+            controls
+            playsInline
+            preload="metadata"
+            onLoadedMetadata={(e) => setVertical(e.currentTarget.videoHeight > e.currentTarget.videoWidth)}
+          />
         </div>
       ) : (
         <div className="video-slot__frame video-slot__frame--empty">

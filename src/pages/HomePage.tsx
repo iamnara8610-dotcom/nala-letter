@@ -97,6 +97,31 @@ export function HomePage() {
         </div>
       </section>
 
+      {/* ── PRESS ──────────────────────────── */}
+      {site.press.length > 0 ? (
+        <section className="press container" aria-labelledby="press-title">
+          <p id="press-title" className="eyebrow">
+            PRESS & AWARDS
+          </p>
+          <ul className="press__list">
+            {site.press.map((x) => (
+              <li key={x.url}>
+                <a className="press__item" href={x.url} target="_blank" rel="noopener noreferrer">
+                  <span className="press__meta">
+                    <span className="pill pill--dark">{x.badge}</span>
+                    <span>
+                      {x.outlet} · {dotDate(x.date)}
+                    </span>
+                  </span>
+                  <span className="press__title">{x.title}</span>
+                  <span className="press__more">기사 보기 ↗</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
+
       {/* ── PREVIOUS ISSUES ────────────────── */}
       <section className="issues container" aria-labelledby="issues-title">
         <div className="section-head">

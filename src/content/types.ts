@@ -15,6 +15,8 @@ export interface LetterImage {
 export interface LetterVideo {
   /** 유튜브 주소(일반/쇼츠/youtu.be), mp4 파일 경로, 또는 인스타그램 릴스 주소. 비워두면 자리표시가 보입니다 */
   url: string;
+  /** 재생 전 보이는 대표 이미지 (mp4 파일일 때 권장) */
+  poster?: string;
   caption?: string;
 }
 
@@ -33,6 +35,8 @@ export interface LetterSection {
   images?: LetterImage[];
   /** 본문 영상 (선택) */
   video?: LetterVideo;
+  /** 본문 아래 버튼 링크 (선택). 예) 기사 원문, 신청 폼 */
+  link?: { label: string; url: string };
 }
 
 export interface LetterNewsItem {
