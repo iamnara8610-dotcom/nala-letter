@@ -69,10 +69,15 @@ function write(rel: string, html: string) {
   writeFileSync(file, html);
 }
 
-/** public 폴더에 실제 이미지가 있을 때만 공유 이미지로 사용 */
-function shareImage(src?: string) {
-  const candidate = src && existsSync(join(root, 'public', src)) ? src : site.defaultShareImage;
-  return existsSync(join(root, 'public', candidate)) ? abs(candidate) : undefined;
+/**
+ * 카톡 등 공유 미리보기 이미지 (가로 1200×630)
+ * 우선순위: 그 호 폴더의 share.jpg → 표지(cover) → public/images/share-default.jpg
+ */
+function shareImage(src?: string, slug?: string) {
+  const has = (p?: string) => Boolean(p && existsSync(join(root, 'public', p)));
+  const perIssue = slug ? `/images/letters/${slug}/share.jpg` : undefined;
+  const pick = [perIssue, src, site.defaultShareImage].find(has);
+  return pick ? abs(pick) : undefined;
 }
 
 async function main() {
@@ -89,7 +94,7 @@ async function main() {
         title: `${site.title} — 나라필라테스 월간 매거진`,
         description: latest ? `${latest.title} · ${site.description}` : site.description,
         url: `${site.siteUrl}/`,
-        image: shareImage(latest?.cover.src),
+        image: shareImage(latest?.cover.src, latest?.slug),
       }),
     ),
   );
@@ -103,7 +108,7 @@ async function main() {
         title: `Archive | ${site.title}`,
         description: '지금까지 발행된 NALA LETTER를 연도별·월별로 모아두었어요.',
         url: `${site.siteUrl}/archive`,
-        image: shareImage(latest?.cover.src),
+        image: shareImage(latest?.cover.src, latest?.slug),
       }),
     ),
   );
@@ -119,7 +124,7 @@ async function main() {
           title: `${l.title} | ${site.title} ${y}년 ${Number(m)}월호`,
           description: l.summary,
           url: `${site.siteUrl}/letter/${l.slug}`,
-          image: shareImage(l.cover.src),
+          image: shareImage(l.cover.src, l.slug),
           type: 'article',
         }),
       ),

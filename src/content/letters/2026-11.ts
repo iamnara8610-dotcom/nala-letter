@@ -66,6 +66,13 @@ const letter: Letter = {
         '매주 금요일 오후 9시에 함께 달려요. 날이 추워지기 전까지 꾸준히 이어갈 예정이에요.',
         '처음 달려보는 분도 괜찮아요. 함께 움직이는 시간 자체를 즐겨주세요.',
       ],
+      images: [
+        {
+          src: '/images/letters/2026-11/running-club.jpg',
+          alt: '금요일 밤 공원을 함께 달리는 NALA 러닝클럽',
+          caption: 'EVERY FRIDAY 21:00 · NALA RUNNING CLUB',
+        },
+      ],
     },
     {
       title: '11월 3일(화), 올 블랙 데이',
@@ -80,7 +87,6 @@ const letter: Letter = {
         '앞으로는 태보와 애니멀 플로우 등 다양한 움직임도 선보일 예정이에요.',
         '익숙한 필라테스뿐 아니라 새로운 방식의 운동을 경험할 수 있도록 준비하고 있어요.',
       ],
-      images: [{ src: '/images/letters/2026-11/new-move.jpg', alt: '새롭게 준비 중인 움직임 클래스' }],
     },
   ],
 
