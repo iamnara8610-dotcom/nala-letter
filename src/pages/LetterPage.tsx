@@ -62,6 +62,12 @@ function LetterView({ letter }: { letter: IssuedLetter }) {
         const imgs = s.images ?? [];
         return (
           <section key={i} className="letter-section">
+            {s.part ? (
+              <div className="letter-part container-text">
+                <p className="letter-part__label">{s.part.label}</p>
+                <h2 className="letter-part__title">{s.part.title}</h2>
+              </div>
+            ) : null}
             <div className="container-text">
               <div className="letter-section__head">
                 <span className="letter-section__num">{num}</span>

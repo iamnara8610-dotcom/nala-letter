@@ -1,7 +1,7 @@
 import type { Letter } from '../types';
 
 /**
- * NALA LETTER 2026년 11월호
+ * NALA LETTER 2026년 11월호  (10월 돌아보기 + 11월 계획)
  * 사진: public/images/letters/2026-11/ 폴더에 아래 파일 이름 그대로 넣으면 자동 교체됩니다.
  */
 const letter: Letter = {
@@ -12,7 +12,7 @@ const letter: Letter = {
   title: '필라테스 그 이상의 움직임, 요즘 나라필라테스는요!',
   subtitle: '운동을 넘어 다양한 움직임으로 일상을 채워가는 나라필라테스의 새로운 이야기.',
   summary:
-    '음악과 함께한 매트 필라테스, 금요일 저녁 러닝 모임, 그리고 새롭게 준비 중인 움직임까지. 요즘 나라필라테스의 이야기를 전해요.',
+    '음악과 함께한 매트 필라테스와 금요일 러닝으로 채운 10월. 11월에는 매주 금요일 밤 러닝클럽과 올 블랙 데이, 새로운 움직임을 준비했어요.',
   cover: {
     src: '/images/letters/2026-11/cover.jpg',
     alt: '나라필라테스 11월호 표지 사진',
@@ -25,7 +25,9 @@ const letter: Letter = {
   ],
 
   sections: [
+    // ── 지난달 돌아보기 ─────────────────────
     {
+      part: { label: 'OCTOBER REVIEW', title: '10월 돌아보기' },
       title: '음악과 함께한 매트 필라테스',
       body: [
         '음악을 들으며 함께 움직였던 특별한 매트 필라테스 시간.',
@@ -43,15 +45,33 @@ const letter: Letter = {
     {
       title: '금요일 저녁, 함께 달리는 시간',
       body: [
-        '매주 금요일 저녁에는 러닝 모임도 진행하고 있어요.',
+        '10월에는 금요일 저녁마다 회원님들과 함께 달렸어요.',
         '센터 안에서의 운동을 넘어 일상에서도 건강한 움직임을 이어가는 경험을 만들어가고 있습니다.',
       ],
       images: [
         {
           src: '/images/letters/2026-11/running.jpg',
           alt: '금요일 저녁 러닝 모임',
-          caption: 'EVERY FRIDAY NIGHT · NALA RUNNING',
+          caption: 'FRIDAY NIGHT RUN · OCTOBER',
         },
+      ],
+    },
+
+    // ── 이번 달 계획 ─────────────────────────
+    {
+      part: { label: 'NOVEMBER PLAN', title: '11월 계획' },
+      title: '매주 금요일 밤 9시, NALA 러닝클럽',
+      body: [
+        '10월의 러닝 모임이 11월부터 정식 러닝클럽이 됩니다.',
+        '매주 금요일 오후 9시에 함께 달려요. 날이 추워지기 전까지 꾸준히 이어갈 예정이에요.',
+        '처음 달려보는 분도 괜찮아요. 함께 움직이는 시간 자체를 즐겨주세요.',
+      ],
+    },
+    {
+      title: '11월 3일(화), 올 블랙 데이',
+      body: [
+        '11월 3일 화요일 하루, 개인 레슨과 그룹 레슨 회원님 모두 올 블랙으로 맞춰 입고 수업해요.',
+        '같은 옷을 입고 같은 공간에서 움직이는 하루. 블랙 운동복 하나 챙겨서 함께해 주세요.',
       ],
     },
     {
@@ -65,12 +85,17 @@ const letter: Letter = {
   ],
 
   news: {
-    title: 'NALA NEWS',
+    title: 'NOVEMBER AT A GLANCE',
     items: [
       {
-        tag: 'RUNNING',
-        title: '금요일 저녁 러닝 모임',
-        text: '매주 금요일 저녁 진행 중이에요. 참여 방법은 상담 문의로 안내해 드려요.',
+        tag: '11.03 TUE',
+        title: '올 블랙 데이',
+        text: '개인·그룹 회원 모두 올 블랙으로 입고 수업해요.',
+      },
+      {
+        tag: 'EVERY FRI 21:00',
+        title: 'NALA 러닝클럽',
+        text: '매주 금요일 오후 9시. 추워지기 전까지 계속 달려요.',
       },
       {
         tag: 'COMING SOON',

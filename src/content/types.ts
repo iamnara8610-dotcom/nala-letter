@@ -19,6 +19,11 @@ export interface LetterVideo {
 }
 
 export interface LetterSection {
+  /**
+   * 파트 구분 (선택). 파트가 바뀌는 첫 섹션에만 적으면 그 위에 큰 구분 제목이 들어갑니다.
+   * 예) { label: 'OCTOBER REVIEW', title: '10월 돌아보기' } / { label: 'NOVEMBER PLAN', title: '11월 계획' }
+   */
+  part?: { label: string; title: string };
   /** 소제목 앞 번호. 비워두면 순서대로 01, 02, 03 자동 */
   number?: string;
   title: string;

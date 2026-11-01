@@ -7,7 +7,7 @@
  */
 export const site = {
   /** 배포 후 실제 공개 주소. 독립 도메인 연결 시 여기만 바꾸면 됩니다. (마지막 / 없이) */
- siteUrl: 'https://nala-letter.nalapilates.workers.dev',
+  siteUrl: 'https://nala-letter.nalapilates.workers.dev',
 
   brand: 'NALA PILATES',
   title: 'NALA LETTER',
