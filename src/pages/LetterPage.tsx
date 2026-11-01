@@ -91,7 +91,7 @@ function LetterView({ letter }: { letter: IssuedLetter }) {
                   <ImageSlot
                     key={k}
                     image={img}
-                    ratio={imgs.length === 1 ? 'wide' : 'portrait'}
+                    ratio={img.ratio ?? (imgs.length === 1 ? 'wide' : 'portrait')}
                     label={`${num} · PHOTO ${k + 1}`}
                   />
                 ))}

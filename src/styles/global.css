@@ -1340,6 +1340,10 @@ main {
   }
 }
 
+.letter-gallery--1 .img-slot--square {
+  max-width: 560px;
+}
+
 .container-mid > .video-slot {
   margin-top: 28px;
 }

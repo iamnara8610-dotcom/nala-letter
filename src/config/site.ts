@@ -43,8 +43,8 @@ export const site = {
   press: [
     {
       outlet: '베스트타임즈',
-      badge: '2026 로컬 어워즈',
-      title: '나라필라테스, 2026 제주시 우수 필라테스 센터로 선정',
+      badge: '2026 지역브랜드 대상',
+      title: '나라필라테스, 2026 제주시 우수 필라테스 선정 (피트니스부문)',
       date: '2026-10-29',
       url: 'https://www.besttimes.co.kr/16543',
     },

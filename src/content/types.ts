@@ -10,6 +10,8 @@ export interface LetterImage {
   alt: string;
   /** 사진 아래 작은 캡션 (선택) */
   caption?: string;
+  /** 사진 비율 (선택). 비우면 자동: 1장이면 가로 3:2, 여러 장이면 세로 4:5. 인증서·포스터는 'square' */
+  ratio?: 'wide' | 'portrait' | 'square';
 }
 
 export interface LetterVideo {
